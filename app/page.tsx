@@ -1,4 +1,4 @@
-import Image from "next/image";
+{/*import Image from "next/image";
 
 export default function Home() {
   return (
@@ -99,5 +99,53 @@ export default function Home() {
         </a>
       </footer>
     </div>
+  );
+}*/}
+// app/page.tsx
+
+
+import Link from 'next/link';
+import './Home.css'; // link to the CSS file
+
+export default function Home() {
+  return (
+    <main className="home-container">
+      <header className="home-header">
+        <h1 className="home-title">🎓 WELCOME TO CODE</h1>
+        <p className="home-subtitle">Manage students, teachers, classes, and more</p>
+      </header>
+
+      <section className="dashboard-grid">
+        <Link href="/students" className="dashboard-card">
+          <h2>👩‍🎓 Students</h2>
+          <p>View, add, and manage student profiles and performance.</p>
+        </Link>
+
+        <Link href="/#" className="dashboard-card">
+          <h2>👨‍🏫 Teachers</h2>
+          <p>Manage teacher profiles, assignments, and attendance.</p>
+        </Link>
+
+        <Link href="/#" className="dashboard-card">
+          <h2>🏫 Classes</h2>
+          <p>Organize classes by term, subject, and student groups.</p>
+        </Link>
+
+        <Link href="/#" className="dashboard-card">
+          <h2>🗓️ Timetable</h2>
+          <p>View and manage school schedules and calendars.</p>
+        </Link>
+
+        <Link href="/#" className="dashboard-card">
+          <h2>📊 Grades</h2>
+          <p>Enter, edit, and analyze student grades by subject.</p>
+        </Link>
+
+        <Link href="/#" className="dashboard-card">
+          <h2>⚙️ Settings</h2>
+          <p>Configure roles, permissions, themes, and more.</p>
+        </Link>
+      </section>
+    </main>
   );
 }
