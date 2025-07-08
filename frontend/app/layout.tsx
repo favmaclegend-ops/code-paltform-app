@@ -49,9 +49,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <ThemeScript />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

@@ -42,12 +42,19 @@ interface ThemeToggleProps {
   showLabel?: boolean;
 }
 
+
 export function ThemeToggle({ 
   variant = 'button', 
   size = 'md', 
   showLabel = false 
 }: ThemeToggleProps) {
-  const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();
+  let theme, resolvedTheme, setTheme, toggleTheme;
+  try {
+    ({ theme, resolvedTheme, setTheme, toggleTheme } = useTheme());
+  } catch (e) {
+    // If ThemeProvider is missing, render nothing (or fallback UI)
+    return null;
+  }
   const [isOpen, setIsOpen] = useState(false);
 
   const sizeClasses = {
